@@ -1,0 +1,570 @@
+@font-face{
+    font-family: 'Gotham' ;
+
+src: url(Gotham-Font/Gotham-Bold.otf);
+}
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root{
+
+    --fontfamily : 'Gotham',sans-serif;
+    --fontsize : 13px ; 
+
+    --primarycolor: white;
+
+    --secondarycolor:#3756a3;
+}
+
+html{
+    
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: var(--fontfamily);
+    scroll-behavior: smooth;
+}
+
+.container{
+    position: relative;
+}
+
+
+.video{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.736);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 200ms;
+}
+.video.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.video video{
+    outline: none;
+    max-width: 90%;
+}
+.popupclose{
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    cursor: pointer;
+}
+.popupclose svg{
+    width: 30px;
+    fill: white;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR RESPONSIVE NAV */
+
+.mobNavi{
+    position:fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: var(--secondarycolor);
+    transform: translateX(100%);
+    overflow: hidden;
+    transition: all 200ms;
+    
+}
+.mobNavi.open{
+    transform: translateX(0);
+    
+}
+.mobNavi ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    
+}
+.mobNavi ul li{
+    padding: 30px 150px;
+   transition: all 200ms;
+}
+.mobNavi ul li:hover{
+    background-color:#4487ff;
+}
+.mobNavi ul li:last-child{
+   margin-top: 100px;
+  
+}
+.mobNavi li svg{
+    width: 200px;
+}
+.mobNavi ul li a{
+    text-decoration: none;
+    color: var(--primarycolor);
+
+}
+.mobNavi .close{
+    position: absolute;
+    top: 20px ;
+    right: 20px;
+}
+
+.close svg{
+    width: 30px;
+    fill: white;
+    cursor: pointer;
+}
+.open{
+    display: none;
+    cursor: pointer;
+   
+}
+.open svg{
+    width: 30px;
+    fill: white;
+    
+}
+
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR Section 1 */
+
+.headerNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+}
+.headerNav img{
+    width: 170px;
+    height: 50px;
+}
+.headerNav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+}
+.headerNav li{
+    padding: 0 30px;
+}
+.headerNav li a{
+    font-family: var(--fontfamily);
+    text-decoration: none;
+    font-size: var(--fontsize);
+    color: var(--primarycolor);
+
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms;
+}
+.headerNav li a:hover{
+    text-decoration: underline;
+}
+.headerNav li svg{
+    width: 100px;
+}
+.section-1{
+    background: url(assets/Group\ 121.png) no-repeat center/cover;
+object-fit: cover;
+}
+.section1Main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section1Main .top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+}
+.section1Main .top h1{
+    font-size: calc(var(--fontsize ) + 20px)  ;
+    color: var(--primarycolor);
+    font-family: var(--fontfamily);
+    margin-top: 70px;
+}
+.section1Main .top p{
+    font-family: var(--fontfamily);
+    font-size: calc(var(--fontsize) + 3px)  ;
+    color: var(--primarycolor);
+    margin-top: 20px;
+  
+}
+ .playbtn{
+    background: none;
+    color: var(--secondarycolor);
+    font-family: var(--fontfamily);
+    font-size: var(--fontsize)  ;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 3px 15px;
+    cursor: pointer;
+}
+.playbtn span{
+    padding: 0 15px;
+}
+.playbtn svg{
+    width: 30px;
+    
+}
+.section1Main .bottom{
+    display: flex;
+    width: 90%;
+    
+    margin-top: 50px;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  
+}
+
+.section1Main .bottom .left{
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+
+}
+.section1Main .bottom .left img{
+    width: 190px;
+}
+
+.section1Main .bottom .right img{
+    width: 220px;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR Section 2 */
+
+.section-2{
+    background: url(assets/Group\ 120.png) ;
+ background-size: cover;
+ background-repeat: no-repeat;
+  background-position:center;
+    width: 100%;
+    object-fit: cover;
+}
+.section-2 .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section-2 .content .lights2{
+    display: flex;
+}
+.section-2  .content h1{
+    font-size: calc(var(--fontsize) + 12px)   ;
+    color: var(--secondarycolor);
+    font-family: var(--fontfamily);
+    margin-top: 60px;
+    text-align: center;
+    text-shadow: 0 1px 2px white;
+}
+.section-2  .content .lights2{
+    margin-top: 140px;
+}
+.section-2  .content .lights2 img{
+    width: 320px;
+    margin: 0 30px;
+}
+.section-2  .content .lights2 .light{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.section-2  .content .lights2 .light:first-child{
+   align-self: flex-end;
+}
+.section-2  .content .lights2 .light p{
+ margin-top: 25px;
+ color: var(--secondarycolor);
+ margin-bottom: 70px;
+}
+
+
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR Section 3 */
+
+.section-3{
+    background: url(assets/videocover.png) no-repeat center center/cover;
+    
+    object-fit: cover;
+}
+
+.section3content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+   padding: 300px 0;
+}
+.section3content h1{
+    color: var(--primarycolor);
+    text-align: center;
+    text-shadow: 0 2px 4px rgb(0, 0, 0);
+}
+.section3content button{
+    margin-top: 40px;
+}
+
+
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR Section  4 */
+
+
+.section-4{
+
+    background-color: #f3f6fb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-4 p:first-child{
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 60%;
+    text-align: center;
+    color:var(--secondarycolor);
+
+
+
+}
+.section4Main{
+    margin: 120px 0;
+    display: grid;
+   
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    
+    width: 90%;
+     
+     justify-content: center;
+    grid-row-gap: 50px;
+    grid-column-gap: 70px;
+    
+}
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.feature p{ 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:var(--secondarycolor);
+    margin: 3px 0;
+    font-size:  calc(var(--fontsize) - 1px) ;
+   
+}
+.feature p:first-of-type{
+    margin-top: 30px;
+}
+.feature img{
+    width: 60px;
+}
+.feature:last-child img{
+
+    width: 90px;
+}
+.feature:last-child {
+
+   align-self: flex-end;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR Footer */
+
+.footer{
+    background-color: var(--secondarycolor);
+}
+.footercontent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 150px;
+}
+.footercontent h1{
+    color: var(--primarycolor);
+    font-size: calc(var(--fontsize) + 7px) ;
+    text-align: center;
+}
+.footercontent form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.footercontent form input{
+   padding: 10px 50px;
+   width: 50%;
+border: none;
+outline: none;
+   border-radius: 30px;
+   outline: none;
+}
+.footercontent form button{
+   padding: 10px 40px;
+   border: none;
+   margin-top: 25px;
+   cursor: pointer;
+   text-transform: uppercase;
+   border-radius: 30px;
+   background-color: #4487ff;
+   color: var(--primarycolor);
+   transition: all 200ms;
+}
+
+.footercontent form button:hover{
+background-color: #4486ffbd;
+
+}
+#email::placeholder{
+    color: rgba(0, 0, 0, 0.473);
+}
+
+.footercontent .email{
+    display: flex;
+    align-items: center;
+}
+.footercontent .email svg{
+    fill: white;
+    width: 27px;
+}
+.footercontent .email p{
+    color: var(--primarycolor);
+    text-transform: lowercase;
+    margin: 0 20px;
+}
+.copyright{
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+.copyright p{
+    color: rgba(255, 255, 255, 0.322);
+    text-transform: none;
+}
+
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////// CODE FOR MEdia Queries */
+
+
+@media screen and (max-width:950px) {
+    :root{
+       --fontsize: 12px;
+    }
+    .headerNav ul{
+        display: none;
+    }
+    .open{
+        display: block;
+    }
+
+    .section1Main .top{
+        
+        width: 90%;
+    }
+    
+
+    .section1Main .bottom{
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+      
+    }
+    .section1Main .bottom .left{
+       align-self: center;
+       order: 3;
+       margin-top: 80px;
+      
+    }
+    .section1Main .bottom .right .lights{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      
+    }
+
+    .section-2  .content .lights2 img{
+        width: 80%;
+        margin: 0 15px;
+    }
+}
+
+@media screen and (max-width:632px) {
+
+    .section-4 p:first-child{
+       
+        width: 90%;
+    
+    }
+
+    .footercontent form input{
+        padding: 10px 15px;
+        
+     }
+
+     .section1Main .top h1{
+        font-size: calc(var(--fontsize ) + 15px)  ;
+        
+    }
+    .lights2{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:460px) {
+
+    .lights{
+        flex-direction: column;
+    }
+    .lights img{
+        margin: 20px 0;
+    }
+
+    
+}
+
+@media screen and (min-width:1600px) {
+    :root{
+        --fontsize: 15px;
+    }
+}
